@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b1020" />
+  <title>Mi espacio | Fotografía, videojuegos y creatividad</title>
+  <meta name="description" content="Una pequeña presentación personal: fotografía, videojuegos y creatividad." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            display: ['Space Grotesk', 'Inter', 'ui-sans-serif', 'sans-serif']
+          },
+          colors: {
+            ink: '#0b1020',
+            panel: '#121a2d',
+            accent: '#8b5cf6',
+            cyanlight: '#67e8f9'
+          },
+          boxShadow: {
+            glow: '0 0 45px rgba(139, 92, 246, 0.18)'
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { background: #0b1020; }
+    .hero-grid {
+      background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: linear-gradient(to bottom, black, transparent 90%);
+    }
+    .text-gradient {
+      background: linear-gradient(100deg, #c4b5fd 5%, #67e8f9 95%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .photo-card img { transition: transform .7s cubic-bezier(.2,.7,.2,1); }
+    .photo-card:hover img { transform: scale(1.06); }
+  </style>
+</head>
+<body class="font-sans text-slate-100 antialiased selection:bg-violet-500/40">
+  <!-- Navegación -->
+  <header class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-ink/75 backdrop-blur-xl">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8" aria-label="Navegación principal">
+      <a href="#inicio" class="font-display text-lg font-bold tracking-tight">
+        mi<span class="text-violet-400">.</span>espacio
+      </a>
+      <button id="menuBtn" class="rounded-lg border border-white/15 px-3 py-2 text-sm md:hidden" aria-expanded="false" aria-controls="mobileMenu">
+        Menú <span aria-hidden="true">☰</span>
+      </button>
+      <div class="hidden items-center gap-8 text-sm text-slate-300 md:flex">
+        <a class="transition hover:text-white" href="#sobre-mi">Sobre mí</a>
+        <a class="transition hover:text-white" href="#intereses">Mis intereses</a>
+        <a class="transition hover:text-white" href="#galeria">Galería</a>
+        <a href="#contacto" class="rounded-full border border-violet-400/50 px-4 py-2 text-white transition hover:bg-violet-500/15">Hablemos ↗</a>
+      </div>
+    </nav>
+    <div id="mobileMenu" class="hidden border-t border-white/10 bg-ink px-5 py-4 md:hidden">
+      <div class="flex flex-col gap-4 text-sm text-slate-300">
+        <a href="#sobre-mi">Sobre mí</a><a href="#intereses">Mis intereses</a><a href="#galeria">Galería</a><a href="#contacto">Contacto</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="inicio" class="relative flex min-h-[92vh] items-center overflow-hidden pt-24">
+      <div class="hero-grid absolute inset-0"></div>
+      <div class="absolute -left-40 top-24 h-96 w-96 rounded-full bg-violet-600/20 blur-[120px]"></div>
+      <div class="absolute -right-40 bottom-0 h-96 w-96 rounded-full bg-cyan-400/10 blur-[120px]"></div>
+      <div class="relative mx-auto grid w-full max-w-7xl items-center gap-14 px-5 py-16 sm:px-8 lg:grid-cols-[1.05fr_.95fr] lg:py-24">
+        <div>
+          <div class="mb-7 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-xs font-medium tracking-wide text-slate-300">
+            <span class="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_12px_#34d399]"></span>
+            UN POCO DE MÍ, SIN FILTROS
+          </div>
+          <p class="mb-3 text-sm font-semibold uppercase tracking-[.25em] text-violet-300">Hola, soy</p>
+          <h1 class="font-display text-5xl font-bold leading-[1.06] tracking-tight sm:text-6xl lg:text-7xl">
+            Una mente<br />
+            <span class="text-gradient">curiosa</span> y creativa.
+          </h1>
+          <p class="mt-7 max-w-xl text-base leading-8 text-slate-300 sm:text-lg">
+            Me gusta capturar momentos con la cámara, descubrir historias a través del video y desconectarme un rato explorando mundos en los videojuegos.
+          </p>
+          <div class="mt-9 flex flex-wrap gap-4">
+            <a href="#sobre-mi" class="rounded-full bg-violet-500 px-6 py-3 text-sm font-semibold text-white shadow-glow transition hover:-translate-y-0.5 hover:bg-violet-400">
+              Conóceme mejor <span aria-hidden="true">↓</span>
+            </a>
+            <a href="#galeria" class="rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-slate-200 transition hover:border-white/35 hover:bg-white/5">
+              Ver inspiración
+            </a>
+          </div>
+          <div class="mt-12 flex items-center gap-5 text-xs text-slate-400">
+            <span class="flex items-center gap-2"><span class="text-lg">📷</span> Fotografía & video</span>
+            <span class="h-1 w-1 rounded-full bg-slate-600"></span>
+            <span class="flex items-center gap-2"><span class="text-lg">🎮</span> Gaming</span>
+          </div>
+        </div>
+        <div class="relative mx-auto w-full max-w-lg">
+          <div class="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-violet-500/20 to-cyan-300/10 blur-2xl"></div>
+          <div class="relative rotate-1 overflow-hidden rounded-[1.7rem] border border-white/15 bg-panel p-3 shadow-2xl">
+            <div class="relative overflow-hidden rounded-[1.2rem]">
+              <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1100&q=85"
+                   alt="Cámara fotográfica sobre una mesa" class="h-[420px] w-full object-cover sm:h-[500px]" />
+              <div class="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-transparent"></div>
+              <div class="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
+                <p class="text-xs font-semibold uppercase tracking-[.25em] text-cyan-200">Mi forma de mirar</p>
+                <p class="mt-2 font-display text-2xl font-semibold sm:text-3xl">Historias en cada detalle.</p>
+              </div>
+              <div class="absolute left-4 top-4 rounded-full border border-white/20 bg-black/30 px-3 py-1.5 text-xs backdrop-blur-md">01 / CREATIVIDAD</div>
+            </div>
+          </div>
+          <div class="absolute -bottom-7 -left-5 hidden rounded-2xl border border-white/10 bg-panel/90 p-4 shadow-xl backdrop-blur md:block">
+            <div class="flex items-center gap-3">
+              <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-cyan-300/10 text-xl">✦</div>
+              <div><p class="text-sm font-semibold">Siempre aprendiendo</p><p class="mt-1 text-xs text-slate-400">Una idea a la vez</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sobre mí -->
+    <section id="sobre-mi" class="relative border-t border-white/5 py-24 sm:py-32">
+      <div class="mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-[.75fr_1.25fr] lg:gap-24">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-[.25em] text-violet-300">01 — Sobre mí</p>
+          <h2 class="mt-5 font-display text-4xl font-bold leading-tight sm:text-5xl">Me gustan las cosas que <span class="text-gradient">cuentan algo.</span></h2>
+        </div>
+        <div class="space-y-5 text-base leading-8 text-slate-300 sm:text-lg">
+          <p>Creo que siempre hay algo interesante por descubrir: una luz bonita, un paisaje inesperado, una escena que merece quedarse o un videojuego que te hace olvidar el tiempo.</p>
+          <p>La fotografía y el video me permiten guardar esos momentos y volver a vivirlos. Los videojuegos, por su parte, me ofrecen desafíos, mundos nuevos y esa emoción de intentar una vez más.</p>
+          <p class="text-slate-400">Esta página es una pequeña ventana a lo que me gusta y a las cosas que me inspiran. ¡Bienvenido a mi espacio!</p>
+          <div class="grid gap-4 pt-5 sm:grid-cols-3">
+            <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+              <span class="text-2xl">🌄</span><p class="mt-3 font-semibold text-white">Explorar</p><p class="mt-1 text-sm text-slate-400">Encontrar nuevas perspectivas.</p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+              <span class="text-2xl">🎬</span><p class="mt-3 font-semibold text-white">Crear</p><p class="mt-1 text-sm text-slate-400">Convertir momentos en historias.</p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+              <span class="text-2xl">🕹️</span><p class="mt-3 font-semibold text-white">Jugar</p><p class="mt-1 text-sm text-slate-400">Superar retos y divertirme.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Intereses -->
+    <section id="intereses" class="border-y border-white/5 bg-white/[0.02] py-24 sm:py-28">
+      <div class="mx-auto max-w-7xl px-5 sm:px-8">
+        <div class="mb-12 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+          <div><p class="text-sm font-semibold uppercase tracking-[.25em] text-violet-300">02 — Lo que me mueve</p>
+            <h2 class="mt-4 font-display text-4xl font-bold sm:text-5xl">Mis intereses</h2></div>
+          <p class="max-w-md text-slate-400">Dos formas distintas de vivir historias: detrás de una cámara o frente a una pantalla.</p>
+        </div>
+        <div class="grid gap-6 md:grid-cols-2">
+          <article class="group overflow-hidden rounded-3xl border border-white/10 bg-panel transition hover:-translate-y-1 hover:border-violet-400/40">
+            <div class="photo-card relative h-64 overflow-hidden sm:h-80">
+              <img class="h-full w-full object-cover" src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1200&q=85" alt="Ciervos en un paisaje natural al atardecer" loading="lazy">
+              <div class="absolute inset-0 bg-gradient-to-t from-panel via-transparent to-transparent"></div>
+              <span class="absolute left-5 top-5 rounded-full border border-white/20 bg-black/30 px-3 py-1.5 text-xs backdrop-blur">01 / FOTOGRAFÍA</span>
+            </div>
+            <div class="p-7 sm:p-8">
+              <div class="flex items-start justify-between gap-4"><h3 class="font-display text-2xl font-bold">Fotografía y video</h3><span class="text-2xl">📸</span></div>
+              <p class="mt-4 leading-7 text-slate-400">Me encanta capturar paisajes, detalles y momentos espontáneos. También disfruto grabar y editar videos para darles ritmo, emoción y una historia propia.</p>
+              <div class="mt-6 flex flex-wrap gap-2"><span class="rounded-full bg-white/5 px-3 py-1.5 text-xs text-slate-300">Paisajes</span><span class="rounded-full bg-white/5 px-3 py-1.5 text-xs text-slate-300">Video</span><span class="rounded-full bg-white/5 px-3 py-1.5 text-xs text-slate-300">Edición</span></div>
+            </div>
+          </article>
+          <article class="group overflow-hidden rounded-3xl border border-white/10 bg-panel transition hover:-translate-y-1 hover:border-cyan-300/40">
+            <div class="photo-card relative h-64 overflow-hidden sm:h-80">
+              <img class="h-full w-full object-cover" src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=85" alt="Espacio de videojuegos con luces y pantallas" loading="lazy">
+              <div class="absolute inset-0 bg-gradient-to-t from-panel via-transparent to-transparent"></div>
+              <span class="absolute left-5 top-5 rounded-full border border-white/20 bg-black/30 px-3 py-1.5 text-xs backdrop-blur">02 / VIDEOJUEGOS</span>
+            </div>
+            <div class="p-7 sm:p-8">
+              <div class="flex items-start justify-between gap-4"><h3 class="font-display text-2xl font-bold">Videojuegos</h3><span class="text-2xl">🎮</span></div>
+              <p class="mt-4 leading-7 text-slate-400">Disfruto los juegos que ponen a prueba los reflejos, la estrategia y el trabajo en equipo. Cada partida es una oportunidad para aprender y pasarlo bien.</p>
+              <div class="mt-6 flex flex-wrap gap-2"><span class="rounded-full bg-white/5 px-3 py-1.5 text-xs text-slate-300">FPS</span><span class="rounded-full bg-white/5 px-3 py-1.5 text-xs text-slate-300">Estrategia</span><span class="rounded-full bg-white/5 px-3 py-1.5 text-xs text-slate-300">Competitivo</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Galería -->
+    <section id="galeria" class="py-24 sm:py-28">
+      <div class="mx-auto max-w-7xl px-5 sm:px-8">
+        <div class="mb-10">
+          <p class="text-sm font-semibold uppercase tracking-[.25em] text-violet-300">03 — Inspiración visual</p>
+          <h2 class="mt-4 font-display text-4xl font-bold sm:text-5xl">Una mirada al mundo</h2>
+          <p class="mt-4 max-w-xl leading-7 text-slate-400">Algunas imágenes que representan la clase de momentos, lugares y experiencias que me inspiran. Puedes reemplazarlas por tus propias fotografías.</p>
+        </div>
+        <div class="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4">
+          <figure class="photo-card group relative col-span-2 overflow-hidden rounded-2xl sm:row-span-2">
+            <img class="h-72 w-full object-cover sm:h-full sm:min-h-[440px]" src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=85" alt="Montañas imponentes bajo un cielo luminoso" loading="lazy">
+            <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-5 pt-16"><p class="font-semibold">Aire libre</p><p class="mt-1 text-sm text-slate-300">Perderse para encontrar nuevas vistas.</p></figcaption>
+          </figure>
+          <figure class="photo-card relative overflow-hidden rounded-2xl">
+            <img class="h-48 w-full object-cover sm:h-52" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=700&q=85" alt="Paisaje natural bañado por la luz del sol" loading="lazy">
+            <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 to-transparent p-4 pt-10 text-sm font-medium">Luz natural</figcaption>
+          </figure>
+          <figure class="photo-card relative overflow-hidden rounded-2xl">
+            <img class="h-48 w-full object-cover sm:h-52" src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=700&q=85" alt="Control de videojuegos en una mesa" loading="lazy">
+            <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 to-transparent p-4 pt-10 text-sm font-medium">Tiempo de jugar</figcaption>
+          </figure>
+          <figure class="photo-card relative overflow-hidden rounded-2xl">
+            <img class="h-48 w-full object-cover sm:h-52" src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=700&q=85" alt="Luces de un evento en vivo" loading="lazy">
+            <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 to-transparent p-4 pt-10 text-sm font-medium">Momentos en vivo</figcaption>
+          </figure>
+          <figure class="photo-card relative overflow-hidden rounded-2xl">
+            <img class="h-48 w-full object-cover sm:h-52" src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=700&q=85" alt="Cielo nocturno con estrellas" loading="lazy">
+            <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 to-transparent p-4 pt-10 text-sm font-medium">Mirar más allá</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cierre / contacto -->
+    <section id="contacto" class="px-5 pb-24 sm:px-8 sm:pb-28">
+      <div class="relative mx-auto max-w-7xl overflow-hidden rounded-[2rem] border border-white/10 bg-panel px-6 py-14 text-center sm:px-12 sm:py-20">
+        <div class="absolute -left-20 -top-28 h-72 w-72 rounded-full bg-violet-500/20 blur-[90px]"></div>
+        <div class="absolute -right-20 -bottom-28 h-72 w-72 rounded-full bg-cyan-400/10 blur-[90px]"></div>
+        <div class="relative">
+          <p class="text-sm font-semibold uppercase tracking-[.25em] text-cyan-200">¿Compartimos intereses?</p>
+          <h2 class="mx-auto mt-5 max-w-3xl font-display text-4xl font-bold sm:text-6xl">Las buenas historias son mejores cuando se comparten.</h2>
+          <p class="mx-auto mt-5 max-w-xl leading-7 text-slate-400">Si también te gusta la fotografía, el video o los videojuegos, seguro que tenemos algo de qué conversar.</p>
+          <a href="mailto:tu-correo@ejemplo.com" class="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 font-semibold text-ink transition hover:-translate-y-0.5 hover:bg-cyan-100">Escríbeme <span aria-hidden="true">↗</span></a>
+          <p class="mt-4 text-xs text-slate-500">Recuerda cambiar este correo por el tuyo.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/10 px-5 py-7 sm:px-8">
+    <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 text-center text-sm text-slate-500 sm:flex-row sm:text-left">
+      <p>© <span id="year"></span> Mi espacio. Hecho con creatividad.</p>
+      <a href="#inicio" class="transition hover:text-white">Volver arriba ↑</a>
+    </div>
+  </footer>
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => {
+      const isOpen = !mobileMenu.classList.contains('hidden');
+      mobileMenu.classList.toggle('hidden');
+      menuBtn.setAttribute('aria-expanded', String(!isOpen));
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
